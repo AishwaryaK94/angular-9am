@@ -1,0 +1,19 @@
+ label {
+     font-size: 20px
+ }
+ .lbl-control {
+     color: brown;
+     font-family: "Calibri"
+ }
+ .body-background {
+     background-color: lightgrey
+ }
+ /*id based styling*/
+ 
+ #lblCountry {
+     color: crimson
+ }
+ .tbl-register {
+     margin-left: 50px;
+     border: 2px green solid;
+ }
