@@ -36,7 +36,8 @@ function buildCountryDropdown() {
         var tag = buildOptionTag(countries[i]);
         ddlCountry.appendChild(tag);
     }*/
-    buildDropdown(ddlCountry, countryList);
+    // buildDropdown(ddlCountry, countryList);
+    buildDropdown(getControls().country, getCountryList())
 }
 
 
