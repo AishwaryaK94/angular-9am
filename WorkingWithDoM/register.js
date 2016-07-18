@@ -4,8 +4,26 @@ function registerUser() {
     user.FirstName = controls.firstName.value;
     user.LastName = controls.lastName.value;
     user.Age = controls.age.value;
+    user.country = controls.country.value;
+    user.state = controls.states.value;
+    user.gender = getGenderDetails();
+    var result = alphabetsOnly(user.FirstName);
+    alert(result);
     console.log(user);
 };
+
+function getGenderDetails() {
+    var gender = document.getElementsByName("gender");
+    var result;
+    for (var i = 0; i < gender.length; i++) {
+        if (gender[i].checked) {
+            result = gender[i].value;
+            break;
+        }
+    }
+
+    return result;
+}
 
 function getControls() {
     var pageControls = {};
