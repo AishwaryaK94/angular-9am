@@ -32,6 +32,7 @@ function getControls() {
     pageControls.age = document.getElementById("txtAge");
     pageControls.country = document.getElementById("ddlCountry");
     pageControls.states = document.getElementById("ddlStates");
+    pageControls.registerButton = document.getElementById("btnRegister");
     return pageControls;
 }
 
@@ -69,6 +70,7 @@ function buildOptionTag(country) {
 
 function initPage() {
     buildCountryDropdown();
+    bindEvents();
 }
 
 function getStateList(country) {
@@ -126,4 +128,26 @@ function buildDropdown(dropdownName, collection) {
         dropdownName.appendChild(tag);
     }
 }
+
+
+function changeColor() {
+    if (this.style.backgroundColor == "") {
+        this.style.backgroundColor = "red";
+    } else {
+        this.style.backgroundColor = "";
+    }
+
+}
+
+function bindEvents() {
+    var controls = getControls();
+    controls.registerButton.addEventListener("click", registerUser);
+    controls.country.addEventListener("change", loadStates);
+    controls.firstName.addEventListener("keypress", Utils().alphabetsOnly);
+    controls.lastName.addEventListener("keypress", Utils().alphabetsOnly);
+    controls.age.addEventListener("keypress", Utils().numbersOnly);
+    controls.registerButton.addEventListener("mouseenter", changeColor);
+    controls.registerButton.addEventListener("mouseleave", changeColor);
+}
+
 initPage();
