@@ -1,0 +1,3 @@
+function ticket() {
+    this.ticketType
+}
